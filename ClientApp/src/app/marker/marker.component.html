@@ -1,0 +1,11 @@
+<app-google-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom" [markers]="markers"></app-google-map>
+<div class="col text-center" *ngIf="btnVisible">
+  <div class="form-group">
+    <label for="labelInputComment" id="labelInputComment">Comment</label>
+    <input type="text" class="form-control" id="inputComment" aria-describedby="commentHelp" placeholder="Enter comment" [(ngModel)]="comment">
+    <small id="commentHelp" class="form-text text-muted">Enter a comment to go with your marker!</small>
+  </div>
+  <button type="submit" id="buttonMarkPin" (click)="addMarker(comment)" class="btn btn-primary btn-lg">
+    Mark pin
+  </button>
+</div>

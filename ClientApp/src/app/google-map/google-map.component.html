@@ -1,0 +1,15 @@
+<div class="row">
+  <agm-map [latitude]="latitude"
+           [longitude]="longitude"
+           [zoom]="zoom" [streetViewControl]="false">
+    <agm-marker *ngFor="let marker of markers" [latitude]="marker.coordinates.latitude" class="agmMarker"
+                [longitude]="marker.coordinates.longitude">
+      <!-- Adapted from https://stackblitz.com/edit/angular-google-maps-demo?file=app%2Fapp.component.ts -->
+      <agm-info-window>
+        Comment:<strong> {{marker.comment}}</strong>
+        <br />
+        Username: <strong>{{marker.user.userName}}</strong>
+      </agm-info-window>
+    </agm-marker>
+  </agm-map>
+</div>
